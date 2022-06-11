@@ -1,0 +1,88 @@
+/* text - #0d2992
+background - #fcfcfc
+other text - #cb001b
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+.navigationBar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+navigation{
+    flex: 1;
+    text-align: right;
+}
+navigation ul{
+    display: inline-block;
+    list-style-type: none;
+}
+navigation ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #0d2992;
+}
+p{
+    text-decoration: none;
+    color: #0d2992;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.firstColumn h1{
+    color: #0d2992;
+}
+.firstColumn p{
+    color: #cb001b;
+}
+.secondColumn{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.secondColumn img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+.secondColumn h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.button{
+    display: inline-block;
+    color: #fcfcfc;
+    background: #cb001b;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.header{
+    background: #fcfcfc;
+}
+.header ,row{
+    margin-top: 70px;
+}
+.button:hover {
+    background: #211515;
+}
