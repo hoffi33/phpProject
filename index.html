@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sklep Rowerowy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +21,7 @@
                 <img src="images/logo.jpg" width="150px">
             </div>
             <navigation>
-                <ul>
+                <ul id="mainMenu">
                     <li><a href="">Strona Główna</a></li>
                     <li><a href="">Rowery</a></li>
                     <li><a href="">Odzież ochronna</a></li>
@@ -28,8 +29,8 @@
                     <li><a href="">Zaloguj się</a></li>
                 </ul>
             </navigation>
-            <img src="images/shopping-cart.png" width="40px" height="40px">
-            <img src="images/menu.png" class="menu">
+            <img src="images/shopping-cart.png" width="30px" height="30px">
+            <img src="images/menu.png" class="menu" onclick="menuTogg()">
         </div>
         <div class="row">
             <div class="firstColumn">
@@ -146,6 +147,16 @@
         <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
     </div>
 </div>
-
+<script>
+    var mainMenu = document.getElementById("mainMenu");
+    mainMenu.style.maxHeight = "0px";
+    function menuTogg(){
+        if(mainMenu.style.maxHeight == "0px"){
+mainMenu.style.maxHeight = "200px";
+        }else{
+            mainMenu.style.maxHeight = "0px";
+        }
+    }
+</script>
 </body>
 </html>
