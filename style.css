@@ -158,3 +158,35 @@ h4{
 small{
     color: #555;
 }
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px ;
+}
+.footColumn{
+ min-width: 250px;
+    margin-bottom: 20px;
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none ;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+     margin: 20px 0;
+}
+.copyrights{
+    text-align: center;
+}
+.menu{
+    width: 28px;
+    margin-left: 20px ;
+}
