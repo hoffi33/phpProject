@@ -147,3 +147,14 @@ h4{
 .fourthColumn:hover{
     transform: translateY(5px);
 }
+.specialOff{
+    background: #fcfcfc;
+    margin-top: 80px;
+    padding: 30px 0;
+}
+.secondColumn .specialOff-img{
+    padding: 50px;
+}
+small{
+    color: #555;
+}
