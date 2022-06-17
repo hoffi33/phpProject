@@ -1,3 +1,39 @@
+<?php
+$dbhost = "localhost";
+$dbname = "bikeShop";
+$dbuser = "root";
+$dbpassword = "root";
+$pdo = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpassword);
+$pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+$pdo -> exec("SET NAMES 'utf8'");
+$stmt = $pdo->prepare("SELECT * FROM products");
+$stmt -> execute();
+while($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+
+}
+
+function showCategory($cat_id = null){
+    global $pdo;
+    if($cat_id){
+        $stmt = $pdo->prepare("SELECT * FROM products WHERE cat_id = :cid");
+        $stmt -> bindValue(':cid',$cat_id,PDO::PARAM_INT);
+        $stmt -> execute();
+    }else{
+        $stmt = $pdo->prepare("SELECT * FROM products");
+    $stmt -> execute();
+    }
+
+    while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+        echo "<div class=\"fourthColumn\">";
+        echo "<img src=images/".$row['indeks'].".jpg>";
+        echo "<h4>." . $row['title'] . "</h4>";
+        echo "<p>" . $row['price'] . "zł</p>";
+        echo "</div>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,56 +71,59 @@
         <div class="row">
             <h2 class="title">Nasze Rowery</h2>
             <small>Kategoria</small>
-            <select>
-                <option>Wszystko</option>
-                <option>Górskie</option>
-                <option>Kolarzowki</option>
-                <option>Zjazdowe</option>
-                <option>Elektryczne</option>
+            <form action="" method="post">
+            <select name="bikes" method="post">
+                <option>Wszystkie</option>
+            <?php
+            global $pdo;
+            $stmt= $pdo->prepare("SELECT * FROM categories");
+            $stmt -> execute();
+            while($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+                echo "<option value=\"".$row['name']."\">".$row['name']."</option>";
+            }
+            ?>
             </select>
+            <input type="submit" name="submit" value="Filtruj">
+            </form>
         </div>
 
         <div class="row">
-            <div class="fourthColumn">
-                <img src="images/bike1.jpg">
-                <h4>GIANT REIGN E+ 0</h4>
-                <p>36 699 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike3.jpg">
-                <h4>TRANCE X ADVANCED PRO 29 2</h4>
-                <p>25 999 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike2.jpg">
-                <h4>GIANT REVOLT E+</h4>
-                <p>24 299 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike4.jpg">
-                <h4>TALON E+ 1</h4>
-                <p>12 999 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike5.jpg">
-                <h4>TCR ADVANCED SL DISC 0 RED</h4>
-                <p>54 999 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike6.jpg">
-                <h4>XTC ADVANCED 29 1</h4>
-                <p>19 999 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike7.jpg">
-                <h4>PROPEL ADVANCED PRO DISC</h4>
-                <p>30 499 zł</p>
-            </div>
-            <div class="fourthColumn">
-                <img src="images/bike8.jpg">
-                <h4> REIGN 29</h4>
-                <p>16 799 zł</p>
-            </div>
+
+            <?php
+            $dbhost = "localhost";
+            $dbname = "bikeShop";
+            $dbuser = "root";
+            $dbpassword = "root";
+            $pdo = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpassword);
+            $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $pdo -> exec("SET NAMES 'utf8'");
+
+                if(!empty($_POST['bikes'])) {
+                    $selected = $_POST['bikes'];
+                    if($selected=="Wszystkie"){
+                        showCategory();
+                    }
+                    elseif ($selected=="Górskie"){
+                        showCategory(4);
+                    }
+                    elseif ($selected=="Kolarzówki"){
+                        showCategory(3);
+                    }
+                    elseif ($selected=="Zjazdowe"){
+                        showCategory(2);
+                    }
+                    elseif ($selected=="Elektryczne"){
+                        showCategory(1);
+                    }
+
+                } else {
+                    showCategory();
+                }
+
+
+
+            ?>
+
         </div>
     </div>
 </div>
