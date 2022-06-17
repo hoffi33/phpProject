@@ -46,52 +46,44 @@
 
         <div class="row">
             <div class="fourthColumn">
-                <img src="images/prod1.jpg">
+                <img src="images/bike1.jpg">
                 <h4>GIANT REIGN E+ 0</h4>
-                <div class="rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div>
                 <p>36 699 zł</p>
             </div>
             <div class="fourthColumn">
-                <img src="images/prod3.jpg">
-                <h4>KASK GIANT ROOST MIPS, OFF-ROAD</h4>
-                <div class="rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                </div>
-                <p>459 zł</p>
+                <img src="images/bike3.jpg">
+                <h4>TRANCE X ADVANCED PRO 29 2</h4>
+                <p>25 999 zł</p>
             </div>
             <div class="fourthColumn">
-                <img src="images/prod2.jpg">
+                <img src="images/bike2.jpg">
                 <h4>GIANT REVOLT E+</h4>
-                <div class="rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                </div>
                 <p>24 299 zł</p>
             </div>
             <div class="fourthColumn">
-                <img src="images/prod4.jpg">
-                <h4>PEDAŁY PLATFORMOWE PINNER ELITE</h4>
-                <div class="rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <i class="fa fa-star-half-o checked"></i>
-                </div>
-                <p>249 zł</p>
+                <img src="images/bike4.jpg">
+                <h4>TALON E+ 1</h4>
+                <p>12 999 zł</p>
+            </div>
+            <div class="fourthColumn">
+                <img src="images/bike5.jpg">
+                <h4>TCR ADVANCED SL DISC 0 RED</h4>
+                <p>54 999 zł</p>
+            </div>
+            <div class="fourthColumn">
+                <img src="images/bike6.jpg">
+                <h4>XTC ADVANCED 29 1</h4>
+                <p>19 999 zł</p>
+            </div>
+            <div class="fourthColumn">
+                <img src="images/bike7.jpg">
+                <h4>PROPEL ADVANCED PRO DISC</h4>
+                <p>30 499 zł</p>
+            </div>
+            <div class="fourthColumn">
+                <img src="images/bike8.jpg">
+                <h4> REIGN 29</h4>
+                <p>16 799 zł</p>
             </div>
         </div>
     </div>

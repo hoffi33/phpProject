@@ -232,6 +232,15 @@ ul {
     margin-left: 20px;
     display: none;
 }
+select{
+    border: 1px solid #0d2992;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
+}
+
+
 
 @media only screen and (max-width: 800px) {
     navigation ul {
