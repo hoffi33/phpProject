@@ -94,7 +94,7 @@ p {
 }
 
 .header {
-    background: #fcfcfc;
+    background: radial-gradient(#ffffff,#89cff0);
 }
 
 .header, row {
@@ -180,7 +180,7 @@ h4 {
 }
 
 .specialOff {
-    background: #fcfcfc;
+    background: radial-gradient(#ffffff,#89cff0);
     margin-top: 80px;
     padding: 30px 0;
 }
