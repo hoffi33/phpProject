@@ -26,7 +26,7 @@ function showCategory($cat_id = null){
     while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         echo "<div class=\"fourthColumn\">";
         echo "<img src=images/".$row['indeks'].".jpg>";
-        echo "<h4>." . $row['title'] . "</h4>";
+        echo "<h4>" . $row['title'] . "</h4>";
         echo "<p>" . $row['price'] . "zł</p>";
         echo "</div>";
     }
@@ -53,7 +53,9 @@ function showCategory($cat_id = null){
 <div class="container">
     <div class="navigationBar">
         <div class="logo">
+            <a href="index.html">
             <img src="images/logoTest2.png" width="180px">
+            </a>
         </div>
         <navigation>
             <ul id="mainMenu">
