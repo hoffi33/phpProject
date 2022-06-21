@@ -34,7 +34,7 @@
         </div>
     </div>
     <!------ pojedynczy produkt ----->
-    <div class="smallContainer">
+    <div class="smallContainer singleProd">
         <div class="row">
             <div class="secondColumn">
                 <img src="images/bike5.jpg" width="100%">
@@ -43,6 +43,10 @@
                 <p>Kategoria: nazwaKategorii</p>
                 <h1>Nazwa produktu</h1>
                 <h4>Cena produktu</h4>
+                <input type="number" value="1">
+                <a href="index.html" class="button">Dodaj do koszyka</a>
+                <h3>Informacje o produkcie</h3>
+                <p>Przykladowy opis produktu </p>
             </div>
         </div>
     </div>
