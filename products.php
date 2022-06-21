@@ -24,9 +24,13 @@ function showCategory($cat_id = null){
     }
 
     while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+        $id = $row['id'];
+
         echo "<div class=\"fourthColumn\">";
+        echo "<a href=product.php?product_id=$id>";
         echo "<img src=images/".$row['indeks'].".jpg>";
         echo "<h4>" . $row['title'] . "</h4>";
+        echo "</a>";
         echo "<p>" . $row['price'] . "zł</p>";
         echo "</div>";
     }
