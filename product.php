@@ -69,6 +69,12 @@
     </div>
     </div>
     <!----- polecane produty ----->
+    <div class="smallContainer">
+        <div class="row row-2">
+            <h2>Nasze inne rowery:</h2>
+            <a href="products.php"> <p>Zobacz wiecej</p></a>
+        </div>
+    </div>
 <div class="smallContainer">
         <div class="row">
             <div class="fourthColumn">
