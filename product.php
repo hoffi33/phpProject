@@ -38,19 +38,19 @@
         <div class="singleProd">
         <div class="row">
             <div class="secondColumn">
-                <img src="images/bike5.jpg" width="100%">
+                <img src="images/bike1.jpg" width="100%" id="productImg">
                 <div class="prodImages-row">
                     <div class="prodImagesColumn">
-                        <img src="images/bike4.jpg" width="100%">
+                        <img src="images/bike1.jpg" width="100%" class="sImg">
                     </div>
                     <div class="prodImagesColumn">
-                        <img src="images/bike3.jpg" width="100%">
+                        <img src="images/bike2.jpg" width="100%" class="sImg">
                     </div>
                     <div class="prodImagesColumn">
-                        <img src="images/bike2.jpg" width="100%">
+                        <img src="images/bike3.jpg" width="100%" class="sImg">
                     </div>
                     <div class="prodImagesColumn">
-                        <img src="images/bike1.jpg" width="100%">
+                        <img src="images/bike4.jpg" width="100%" class="sImg">
                     </div>
 
                 </div>
@@ -122,6 +122,22 @@
         }else{
             mainMenu.style.maxHeight = "0px";
         }
+    }
+</script>
+<script>
+    var productImg = document.getElementById("productImg");
+    var sImg = document.getElementsByClassName("sImg");
+     sImg[0].onclick = function(){
+         productImg.src = sImg[0].src;
+     }
+     sImg[1].onclick = function(){
+         productImg.src = sImg[1].src;
+     }
+     sImg[2].onclick = function(){
+         productImg.src = sImg[2].src;
+     }
+    sImg[3].onclick = function(){
+        productImg.src = sImg[3].src;
     }
 </script>
 </body>
