@@ -93,6 +93,7 @@ p {
     transition: background 0.5s;
 }
 
+
 .header {
     background: radial-gradient(#ffffff,#89cff0);
 }
@@ -254,12 +255,20 @@ select:focus{
     font-weight: bold;
 }
 .singleProd input{
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 10px;
     margin-right: 10px;
     border: 1px solid #cb001b;
+}
+.prodImages-row{
+    display: flex;
+    justify-content: space-between;
+}
+.prodImagesColumn{
+    flex-basis: 24%;
+    cursor: pointer ;
 }
 
 

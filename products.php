@@ -60,8 +60,8 @@ function showCategory($cat_id = null){
         <navigation>
             <ul id="mainMenu">
                 <li><a href="index.html">Strona Główna</a></li>
-                <li><a href="">Rowery</a></li>
-                <li><a href="">Odzież ochronna</a></li>
+                <li><a href="products.php">Rowery</a></li>
+                <li><a href="product.php">Odzież ochronna</a></li>
                 <li><a href="">Kontakt</a></li>
                 <li><a href="">Zaloguj się</a></li>
             </ul>

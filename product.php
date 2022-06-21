@@ -22,7 +22,7 @@
             </div>
             <navigation>
                 <ul id="mainMenu">
-                    <li><a href="">Strona Główna</a></li>
+                    <li><a href="index.html">Strona Główna</a></li>
                     <li><a href="products.php">Rowery</a></li>
                     <li><a href="">Odzież ochronna</a></li>
                     <li><a href="">Kontakt</a></li>
@@ -34,10 +34,26 @@
         </div>
     </div>
     <!------ pojedynczy produkt ----->
-    <div class="smallContainer singleProd">
+    <div class="smallContainer">
+        <div class="singleProd">
         <div class="row">
             <div class="secondColumn">
                 <img src="images/bike5.jpg" width="100%">
+                <div class="prodImages-row">
+                    <div class="prodImagesColumn">
+                        <img src="images/bike4.jpg" width="100%">
+                    </div>
+                    <div class="prodImagesColumn">
+                        <img src="images/bike3.jpg" width="100%">
+                    </div>
+                    <div class="prodImagesColumn">
+                        <img src="images/bike2.jpg" width="100%">
+                    </div>
+                    <div class="prodImagesColumn">
+                        <img src="images/bike1.jpg" width="100%">
+                    </div>
+
+                </div>
             </div>
             <div class="secondColumn">
                 <p>Kategoria: nazwaKategorii</p>
@@ -46,9 +62,11 @@
                 <input type="number" value="1">
                 <a href="index.html" class="button">Dodaj do koszyka</a>
                 <h3>Informacje o produkcie</h3>
+                <br>
                 <p>Przykladowy opis produktu </p>
             </div>
         </div>
+    </div>
     </div>
     <!----- polecane produty ----->
 <div class="smallContainer">
@@ -75,9 +93,6 @@
             </div>
         </div>
         </div>
-
-    </div>
-</div>
 
 
 
