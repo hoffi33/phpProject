@@ -1,11 +1,6 @@
 <?php
-$dbhost = "localhost";
-$dbname = "bikeShop";
-$dbuser = "root";
-$dbpassword = "root";
-$pdo = new PDO("mysql:host=" . $dbhost . ";dbname=" . $dbname, $dbuser, $dbpassword);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$pdo->exec("SET NAMES 'utf8'");
+require ('header.php');
+global $pdo;
 $stmt = $pdo->prepare("SELECT * FROM products");
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -39,7 +34,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         </div>
         <navigation>
             <ul id="mainMenu">
-                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="index.php">Strona Główna</a></li>
                 <li><a href="products.php">Rowery</a></li>
                 <li><a href="">Odzież ochronna</a></li>
                 <li><a href="">Kontakt</a></li>
@@ -99,7 +94,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<h1>" . $row['title'] . "</h1>";
                         echo "<h4>" . $row['price'] . "zł</h4>";
                         echo "<input type=\"number\" value=\"1\">";
-                        echo "<a href=\"index.html\" class=\"button\">Dodaj do koszyka</a>";
+                        echo "<a href=\"index.php\" class=\"button\">Dodaj do koszyka</a>";
                         echo "<h3>Informacje o produkcie</h3>";
                         echo "<br>";
                         echo "<p>" . $row['descr'] . "</p>";

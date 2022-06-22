@@ -1,11 +1,6 @@
 <?php
-$dbhost = "localhost";
-$dbname = "bikeShop";
-$dbuser = "root";
-$dbpassword = "root";
-$pdo = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpassword);
-$pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-$pdo -> exec("SET NAMES 'utf8'");
+require ('header.php');
+
 $stmt = $pdo->prepare("SELECT * FROM products");
 $stmt -> execute();
 while($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
@@ -57,13 +52,13 @@ function showCategory($cat_id = null){
 <div class="container">
     <div class="navigationBar">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
             <img src="images/logoTest2.png" width="180px">
             </a>
         </div>
         <navigation>
             <ul id="mainMenu">
-                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="index.php">Strona Główna</a></li>
                 <li><a href="products.php">Rowery</a></li>
                 <li><a href="product.php">Odzież ochronna</a></li>
                 <li><a href="">Kontakt</a></li>
