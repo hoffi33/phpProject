@@ -14,7 +14,14 @@ class cartFun{
         $stmt->execute();
     }
 
+public function remove($id){
 
+        global $pdo, $session;
+        $stmt = $pdo->prepare("DELETE FROM cart WHERE id = :id");
+        $stmt->bindValue(":id",$id,PDO::PARAM_INT);
+        $stmt->execute();
+
+}
     public function getProducts(){
         global $pdo, $session;
         $stmt = $pdo->prepare("SELECT * FROM cart s LEFT OUTER JOIN products p ON (s.product_id= p.id) WHERE s.session_id=:sid");

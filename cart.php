@@ -54,6 +54,7 @@
                 $finalPrice = 0;
                 $finalProductPrice = 0;
                 foreach ($inCart as $product) {
+                    $prodCartId = $product['id'];
                     $price = $product['price'];
                     $quantity = $product['quantity'];
                     $indeks = $product['indeks'];
@@ -66,7 +67,7 @@
                     <p>" . $title . "</p>
                     <small>Cena: " . $quantity * $price . "PLN</small>
                     <br>
-                    <a href=>Remove</a>
+                    <a href=\"removeFromCart.php?id=$prodCartId\">Usuń</a>
                 </div>
             </div> </td>
             <td>". $quantity . "</td>;
