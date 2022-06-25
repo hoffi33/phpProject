@@ -59,8 +59,11 @@
                     $quantity = $product['quantity'];
                     $indeks = $product['indeks'];
                     $title = $product['title'];
+                    $id = $product['pid'];
+$more = "<a href=\"addToCart.php?id=$id\">+</a>";
+$less = "<a href=\"removeFromCart.php?id=$id\">-</a>";
 
-                    echo "    <tr>
+                    echo "<tr>
       <td><div class=\"cartInfo\">
                     <img src=images/" . $indeks . "-1.jpg>";
                     echo "<div>
@@ -70,7 +73,7 @@
                     <a href=\"removeFromCart.php?id=$prodCartId\">Usuń</a>
                 </div>
             </div> </td>
-            <td>". $quantity . "</td>;
+            <td>". $quantity . "<br>" . $more . " " . $less . "</td>
                     <td>" . $price . " </td>";
                     $finalProductPrice = $quantity*$price;
                     $finalPrice += $finalProductPrice;
