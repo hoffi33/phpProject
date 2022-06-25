@@ -17,7 +17,7 @@ class cartFun{
 
     public function getProducts(){
         global $pdo, $session;
-        $stmt = $pdo->prepare("SELECT * FROM cart WHERE session_id=:sid");
+        $stmt = $pdo->prepare("SELECT * FROM cart s LEFT OUTER JOIN products p ON (s.product_id= p.id) WHERE s.session_id=:sid");
         $stmt->bindValue(':sid', $session->getSessionId(),PDO::PARAM_STR);
         $stmt->execute();
 

@@ -1,7 +1,5 @@
 <?php
-require ('header.php');
-$inCart = $cart->getProducts();
-var_dump($cart->getProducts());
+
 ?>
 
 <!DOCTYPE html>
@@ -50,38 +48,42 @@ var_dump($cart->getProducts());
     </tr>
     <tr>
         <td><div class="cartInfo">
-                <img src="images/buy-1.jpg">
-                <div>
-                    <p>Red printed tshirt</p>
-                    <small>Price: 5050</small>
+                <?php
+                require ('header.php');
+                $inCart = $cart->getProducts();
+                $finalPrice = 0;
+                $finalProductPrice = 0;
+                foreach ($inCart as $product) {
+                    $price = $product['price'];
+                    $quantity = $product['quantity'];
+                    $indeks = $product['indeks'];
+                    $title = $product['title'];
+
+                    echo "    <tr>
+      <td><div class=\"cartInfo\">
+                    <img src=images/" . $indeks . "-1.jpg>";
+                    echo "<div>
+                    <p>" . $title . "</p>
+                    <small>Cena: " . $quantity * $price . "PLN</small>
                     <br>
-                    <a href="">Remove</a>
+                    <a href=>Remove</a>
                 </div>
             </div> </td>
-        <td><input type="number" value="1"></td>
-        <td>Cena </td>
-    </tr>
-    <!----- second product ---->
-    <tr>
-        <td><div class="cartInfo">
-                <img src="images/buy-2.jpg">
-                <div>
-                    <p>Red printed tshirt</p>
-                    <small>Price: 5050</small>
-                    <br>
-                    <a href="">Remove</a>
-                </div>
-            </div> </td>
-        <td><input type="number" value="1"></td>
-        <td>Cena </td>
+            <td>". $quantity . "</td>;
+                    <td>" . $price . " </td>";
+                    $finalProductPrice = $quantity*$price;
+                    $finalPrice += $finalProductPrice;
+                }
+
+                ?>
     </tr>
 </table>
     <div class="finalPrice">
         <table>
-            <tr><td>Subtotal</td>
-            <td>finalPrice</td></tr>
-            <tr><td>Dostawa</td>
-                <td>shipPrice</td></tr>
+            <tr><td>Koszty dostawy</td>
+            <td>GRATIS</td></tr>
+            <tr><td>Całkowita wartość zamówienia</td>
+                <td><?php echo ($finalPrice) ?> PLN</td></tr>
         </table>
     </div>
 </div>
