@@ -89,4 +89,9 @@ else{
         global $pdo,$request;
     }
 
+    public function getSessionId(){
+        return $this->id;
+    }
+
+
 }
