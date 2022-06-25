@@ -68,9 +68,8 @@ $less = "<a href=\"removeFromCart.php?id=$id\">-</a>";
                     <img src=images/" . $indeks . "-1.jpg>";
                     echo "<div>
                     <p>" . $title . "</p>
-                    <small>Cena: " . $quantity * $price . "PLN</small>
-                    <br>
-                    <a href=\"removeFromCart.php?id=$prodCartId\">Usuń</a>
+                    <small>Łączna cena: " . $quantity * $price . "PLN</small>
+      
                 </div>
             </div> </td>
             <td>". $quantity . "<br>" . $more . " " . $less . "</td>

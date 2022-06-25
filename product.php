@@ -52,9 +52,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <div class="secondColumn">
                 <?php
                 $dbhost = "localhost";
-                $dbname = "bikeShop";
-                $dbuser = "root";
-                $dbpassword = "root";
+                $dbname = "23121_bikeShop";
+                $dbuser = "23121_bikeShop";
+                $dbpassword = "123abc12A";
                 $pdo = new PDO("mysql:host=" . $dbhost . ";dbname=" . $dbname, $dbuser, $dbpassword);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $pdo->exec("SET NAMES 'utf8'");
@@ -93,7 +93,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<p>Rowery -> " . $row['nazwa'] . "</p>";
                         echo "<h1>" . $row['title'] . "</h1>";
                         echo "<h4>" . $row['price'] . "zł</h4>";
-                        echo "<input type=\"number\" value=\"1\">";
                         $id = $row['id'];
                         echo "<a href=\"addToCart.php?id=$id\" class=\"button\">Dodaj do koszyka</a>";
                         echo "<h3>Informacje o produkcie</h3>";

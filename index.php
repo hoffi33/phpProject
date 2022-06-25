@@ -34,7 +34,7 @@ require ('header.php');
                 </ul>
             </navigation>
 
-            <a href="cart.php"> <img src="images/shopping-cart.png" width="30px" height="30px">
+            <a href="cart.php"> <img src="images/shopping-cart.png" width="30px" height="30px"></a>
             <img src="images/menu.png" class="menu" onclick="menuTogg()">
         </div>
         <div class="row">

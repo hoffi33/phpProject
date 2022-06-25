@@ -92,9 +92,9 @@ function showCategory($cat_id = null){
 
             <?php
             $dbhost = "localhost";
-            $dbname = "bikeShop";
-            $dbuser = "root";
-            $dbpassword = "root";
+            $dbname = "23121_bikeShop";
+            $dbuser = "23121_bikeShop";
+            $dbpassword = "123abc12A";
             $pdo = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpassword);
             $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $pdo -> exec("SET NAMES 'utf8'");
