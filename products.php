@@ -1,6 +1,6 @@
 <?php
 require ('header.php');
-
+global $pdo;
 $stmt = $pdo->prepare("SELECT * FROM products");
 $stmt -> execute();
 while($row = $stmt -> fetch(PDO::FETCH_ASSOC)){

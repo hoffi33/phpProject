@@ -6,10 +6,10 @@ class userRequest{
     public $info;
 
 
-    public function __construct(){
+    public function __construct(){          //pobieranie danych z urzadzenia uzytkownika
         $this->browser = $_SERVER["HTTP_USER_AGENT"];
         $this->ip = $_SERVER["REMOTE_ADDR"];
-        $this->info = md5($this->browser.$this->ip."cxy420wba4");
+        $this->info = md5($this->browser.$this->ip."cxy420wba4");               //hashed
     }
 
     public function getIp(){

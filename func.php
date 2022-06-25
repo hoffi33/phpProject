@@ -1,7 +1,8 @@
 <?php
 
 function random_session_id(){
-    $id = random_salt(40-strlen(time())).time();
+    $time = time();
+    $id = random_salt(40-strlen($time)).$time;
     return $id;
 }
 
