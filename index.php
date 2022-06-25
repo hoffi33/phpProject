@@ -33,7 +33,8 @@ require ('header.php');
                     <li><a href="">Zaloguj się</a></li>
                 </ul>
             </navigation>
-            <img src="images/shopping-cart.png" width="30px" height="30px">
+
+            <a href="cart.php"> <img src="images/shopping-cart.png" width="30px" height="30px">
             <img src="images/menu.png" class="menu" onclick="menuTogg()">
         </div>
         <div class="row">

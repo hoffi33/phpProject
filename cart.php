@@ -47,7 +47,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 </div>
 
 <!----- cart ------->
-<div class="smallContainer cart-page">
+<div class="smallContainer cart">
 <table>
     <tr>
         <th>Product</th>
@@ -60,6 +60,21 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <div>
                     <p>Red printed tshirt</p>
                     <small>Price: 5050</small>
+                    <br>
+                    <a href="">Remove</a>
+                </div>
+            </div> </td>
+        <td><input type="number" value="1"></td>
+        <td>Cena </td>
+    </tr>
+    <!----- second product ---->
+    <tr>
+        <td><div class="cartInfo">
+                <img src="images/buy-2.jpg">
+                <div>
+                    <p>Red printed tshirt</p>
+                    <small>Price: 5050</small>
+                    <br>
                     <a href="">Remove</a>
                 </div>
             </div> </td>
@@ -67,6 +82,14 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td>Cena </td>
     </tr>
 </table>
+    <div class="finalPrice">
+        <table>
+            <tr><td>Subtotal</td>
+            <td>finalPrice</td></tr>
+            <tr><td>Dostawa</td>
+                <td>shipPrice</td></tr>
+        </table>
+    </div>
 </div>
 
 
