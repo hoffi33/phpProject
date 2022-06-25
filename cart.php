@@ -1,5 +1,7 @@
 <?php
 require ('header.php');
+$inCart = $cart->getProducts();
+var_dump($cart->getProducts());
 ?>
 
 <!DOCTYPE html>

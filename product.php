@@ -94,7 +94,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<h1>" . $row['title'] . "</h1>";
                         echo "<h4>" . $row['price'] . "zł</h4>";
                         echo "<input type=\"number\" value=\"1\">";
-                        echo "<a href=\"index.php\" class=\"button\">Dodaj do koszyka</a>";
+                        $id = $row['id'];
+                        echo "<a href=\"addToCart.php?id=$id\" class=\"button\">Dodaj do koszyka</a>";
                         echo "<h3>Informacje o produkcie</h3>";
                         echo "<br>";
                         echo "<p>" . $row['descr'] . "</p>";

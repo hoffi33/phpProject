@@ -17,8 +17,8 @@ class cartFun{
 
     public function getProducts(){
         global $pdo, $session;
-        $stmt = $pdo->prepare("SELECT * cart WHERE session_id=:sid");
-        $stmt->bindValue('sid', $session->getSessionId(),PDO::PARAM_STR);
+        $stmt = $pdo->prepare("SELECT * FROM cart WHERE session_id=:sid");
+        $stmt->bindValue(':sid', $session->getSessionId(),PDO::PARAM_STR);
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

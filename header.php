@@ -3,6 +3,7 @@ require ('session.php');
 require ('request.php');
 require ('user.php');
 require ('func.php');
+require ('cartFun.php');
 $dbhost = "localhost";
 $dbname = "bikeShop";
 $dbuser = "root";
@@ -12,4 +13,5 @@ $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 $pdo -> exec("SET NAMES 'utf8'");
 $request = new userRequest();
 $session = new session;
+$cart = new cartFun;
 ?>
