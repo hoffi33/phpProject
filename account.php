@@ -1,6 +1,8 @@
 <?php
 require ('header.php');
+require ('login.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +15,8 @@ require ('header.php');
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto+Slab:wght@200&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-
-
 <div class="container">
     <div class="navigationBar">
         <div class="logo">
@@ -29,9 +28,7 @@ require ('header.php');
                 <li><a href="products.php">Rowery</a></li>
                 <li><a href="">O nas</a></li>
                 <li><a href="">Kontakt</a></li>
-                <li><a href="">Zaloguj się</a></li>
                 <?php
-
                 echo $session->getUser()->getId();
                 if(!$session->getUser()->isAnon())
                 {
@@ -48,49 +45,24 @@ require ('header.php');
     </div>
 </div>
 
-<div class="smallContainer">
-    <table>
-        <tr>
-            <th>Uzupełnij dane do wysyłki</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </table>
-    <br>
-    <form action="orderSum.php" method="post">
-        Imie <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}" name="name" required><br>
-       Nazwisko <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}"name="surname" required><br>
-       Email <input type="email" name="email" required><br>
-        Ulica <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}" name="street" required><br>
-        Nr. mieszkania <input type="number" name="street_num" min="1" required><br>
-        Miasto <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}" name="city" required><br>
-        Kod pocztowy <input type="text" name="postal_code" placeholder="XX-XXX" pattern="^\d{2}-\d{3}$" required><br>
-        Województwo <input type="text" name="state" list="wojewodztwa" required>
-        <datalist id="wojewodztwa">
-            <option value="dolnośląskie">
-            <option value="kujawsko-pomorskie">
-            <option value="lubelskie">
-            <option value="lubuskie">
-            <option value="łódzkie">
-            <option value="małopolskie">
-            <option value="mazowieckie">
-            <option value="opolskie">
-            <option value="podkarpackie">
-            <option value="podlaskie">
-            <option value="pomorskie">
-            <option value="śląskie">
-            <option value="świętokrzyskie">
-            <option value="warmińsko-mazurskie">
-            <option value="wielkopolskie">
-            <option value="Zachodniopomorskie">
-        </datalist><br>
-        Numer telefonu  <input type="tel"  name="phone_num" placeholder="XXX-XXX-XXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
-        <input type="submit" class="button" value="Zamawiam"></a>
-    </form>
-<br><br>
+<div class="acc">
+    <div class="container">
+        <div class="row">
+        <div class="secondColumn">
+<img src="images/image1.jpg" width="100%">
+        </div>
+            <div class="secondColumn">
+                <div class="form">
+
+                </div>
+            </div>
+"</div>
+    </div>
+
 
 </div>
-</div>
+
+
 
 
 <div class="footer">
@@ -128,6 +100,3 @@ require ('header.php');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-

@@ -68,7 +68,7 @@ function showCategory($cat_id = null){
                 {
                     echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
                 }else{
-                    echo "<li><a href=\"admin.php\">Zaloguj się</a></li>";
+                    echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
                 }
                 ?>
             </ul>
