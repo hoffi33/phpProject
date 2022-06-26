@@ -70,7 +70,15 @@ $stmt->execute();
         return $result;
     }
 
+public function clearCart(){
 
+        global $pdo, $session;
+
+        $stmt= $pdo->prepare("DELETE from cart WHERE session_id = :sid");
+        $stmt->bindValue(':sid',$session->getSessionId(),PDO::PARAM_STR);
+        $stmt->execute();
+
+}
 
 }
 

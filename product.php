@@ -30,7 +30,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 <div class="container">
     <div class="navigationBar">
         <div class="logo">
-            <img src="images/logoTest2.png" width="180px">
+            <a href="index.php"><img src="images/logoTest2.png" width="180px"></a>
         </div>
         <navigation>
             <ul id="mainMenu">
@@ -53,9 +53,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <div class="secondColumn">
                 <?php
                 $dbhost = "localhost";
-                $dbname = "bikeShop";     //23121_bikeShop
-                $dbuser = "root";     //23121_bikeShop
-                $dbpassword = "root";      //123abc12A
+                $dbname = "23121_bikeShop";     //23121_bikeShop
+                $dbuser = "23121_bikeShop";     //23121_bikeShop
+                $dbpassword = "123abc12A";      //123abc12A
                 $pdo = new PDO("mysql:host=" . $dbhost . ";dbname=" . $dbname, $dbuser, $dbpassword);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $pdo->exec("SET NAMES 'utf8'");

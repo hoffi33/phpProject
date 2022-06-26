@@ -21,7 +21,7 @@ require ('header.php');
 <div class="container">
     <div class="navigationBar">
         <div class="logo">
-            <img src="images/logoTest2.png" width="180px">
+            <a href="index.php"><img src="images/logoTest2.png" width="180px"></a>
         </div>
         <navigation>
             <ul id="mainMenu">

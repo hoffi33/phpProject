@@ -53,7 +53,7 @@ function showCategory($cat_id = null){
     <div class="navigationBar">
         <div class="logo">
             <a href="index.php">
-            <img src="images/logoTest2.png" width="180px">
+                <a href="index.php"><img src="images/logoTest2.png" width="180px"></a>
             </a>
         </div>
         <navigation>
@@ -93,9 +93,9 @@ function showCategory($cat_id = null){
 
             <?php
             $dbhost = "localhost";
-            $dbname = "bikeShop";     //23121_bikeShop
-            $dbuser = "root";     //23121_bikeShop
-            $dbpassword = "root";      //123abc12A
+            $dbname = "23121_bikeShop";     //23121_bikeShop
+            $dbuser = "23121_bikeShop";     //23121_bikeShop
+            $dbpassword = "123abc12A";      //123abc12A
             $pdo = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpassword);
             $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $pdo -> exec("SET NAMES 'utf8'");
