@@ -54,8 +54,8 @@ require ('login.php');
             <div class="secondColumn">
                 <div class="form">
                     <div class="formB">
-                        <span>Zaloguj się</span>
-                        <span>Zarejestruj się</span>
+                        <span onclick="login()">Zaloguj się</span>
+                        <span onclick="register()">Zarejestruj się</span>
                         <hr id="idF">
                     </div>
                     <form action="loggingIn.php" method="post" id="login">
@@ -109,6 +109,22 @@ require ('login.php');
             mainMenu.style.maxHeight = "0px";
         }
     }
+</script>
+<script>
+
+    var register = document.getElementById("register");
+    var login = document.getElementById("login");
+    var idF = documemt.getElementById("idF");
+
+    function register(){
+        register.style.transform = "tramslateX(0px)";
+        login.style.transform = "tramslateX(0px)";
+    }
+    function login(){
+        register.style.transform = "tramslateX(300px)";
+        login.style.transform = "tramslateX(300px)";
+    }
+
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
