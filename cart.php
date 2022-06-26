@@ -40,54 +40,62 @@
 
 <!----- cart ------->
 <div class="smallContainer cart">
-<table>
-    <tr>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Subtotal</th>
-    </tr>
-    <tr>
-        <td><div class="cartInfo">
                 <?php
                 require ('header.php');
                 $inCart = $cart->getProducts();
                 $finalPrice = 0;
                 $finalProductPrice = 0;
-                foreach ($inCart as $product) {
-                    $prodCartId = $product['id'];
-                    $price = $product['price'];
-                    $quantity = $product['quantity'];
-                    $indeks = $product['indeks'];
-                    $title = $product['title'];
-                    $id = $product['pid'];
-$more = "<a href=\"addToCart.php?id=$id\">+</a>";
-$less = "<a href=\"removeFromCart.php?id=$id\">-</a>";
 
-                    echo "<tr>
+if($inCart == null){
+echo "W tej chwili twój koszyk jest pusty. <a href=\"products.php\">Sprawdź nasze produkty i znajdź coś dla siebie!</a><br><br>";
+}else{
+                            echo "<table>
+    <tr>
+        <th>Nazwa produktu</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+    </tr>
+    <tr>
+        <td><div class=\"cartInfo\">";
+
+                    foreach ($inCart as $product) {
+                        $prodCartId = $product['id'];
+                        $price = $product['price'];
+                        $quantity = $product['quantity'];
+                        $indeks = $product['indeks'];
+                        $title = $product['title'];
+                        $id = $product['pid'];
+                        $more = "<a href=\"addToCart.php?id=$id\">+</a>";
+                        $less = "<a href=\"removeFromCart.php?id=$id\">-</a>";
+
+
+echo "
+<tr>
       <td><div class=\"cartInfo\">
                     <img src=images/" . $indeks . "-1.jpg>";
-                    echo "<div>
+                        echo "<div>
                     <p>" . $title . "</p>
                     <small>Łączna cena: " . $quantity * $price . "PLN</small>
       
                 </div>
             </div> </td>
-            <td>". $quantity . "<br>" . $more . " " . $less . "</td>
+            <td>" . $quantity . "<br>" . $more . " " . $less . "</td>
                     <td>" . $price . " </td>";
-                    $finalProductPrice = $quantity*$price;
-                    $finalPrice += $finalProductPrice;
-                }
 
-                ?>
-    </tr>
+                        $finalProductPrice = $quantity * $price;
+                        $finalPrice += $finalProductPrice;
+                }
+                echo "     </tr>
 </table>
-    <div class="finalPrice">
+    <div class=\"finalPrice\">
         <table>
             <tr><td>Koszty dostawy</td>
             <td>GRATIS</td></tr>
             <tr><td>Całkowita wartość zamówienia</td>
-                <td><?php echo ($finalPrice) ?> PLN</td></tr>
-        </table>
+                <td> $finalPrice PLN</td></tr>
+        </table>";
+                    }
+                ?>
     </div>
 </div>
 

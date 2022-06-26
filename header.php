@@ -5,9 +5,9 @@ require ('user.php');
 require ('func.php');
 require ('cartFun.php');
 $dbhost = "localhost";
-$dbname = "23121_bikeShop";
-$dbuser = "23121_bikeShop";
-$dbpassword = "123abc12A";
+$dbname = "bikeShop";     //23121_bikeShop
+$dbuser = "root";     //23121_bikeShop
+$dbpassword = "root";      //123abc12A
 $pdo = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpassword);
 $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 $pdo -> exec("SET NAMES 'utf8'");
