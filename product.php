@@ -38,7 +38,16 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <li><a href="products.php">Rowery</a></li>
                 <li><a href="">O nas</a></li>
                 <li><a href="">Kontakt</a></li>
-                <li><a href="">Zaloguj się</a></li>
+                <?php
+
+                echo $session->getUser()->getId();
+                if(!$session->getUser()->isAnon())
+                {
+                    echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
+                }else{
+                    echo "<li><a href=\"admin.php\">Zaloguj się</a></li>";
+                }
+                ?>
             </ul>
         </navigation>
 

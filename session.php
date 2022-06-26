@@ -58,7 +58,8 @@ $stmt->bindValue(":user_id", $session['user_id'],PDO::PARAM_INT);
 $stmt->execute();
 $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $this->user = new user;
-$user->setLogin($row[0]['login']);
+$this->user->setLogin($row[0]['login']);
+$this->user->setId($session['user_id']);
     }
     else{                               //niezalogowany uzytkownik
 $this->user = new user(true);
@@ -93,19 +94,21 @@ else{
     function updateSession(user $user){             //dla zalogowanego
         global $pdo,$request,$session;
 
-        $nId = random_session_id();
-        $salt = random_salt(10);
-        setcookie('shopCookie',$nId,time()+3600);
-        $stmt = $pdo->prepare("UPDATE session SET salt_token = :salt, updated_at = :time, session_id= :nId, user_id = :user WHERE session_id= :sid");
-        $stmt->bindValue(":salt",$salt,PDO::PARAM_STR);
-        $stmt->bindValue(":time",time(),PDO::PARAM_INT);
-        $stmt->bindValue(":nId",$nId,PDO::PARAM_INT);
-        $stmt->bindValue(":user",$user->getId(),PDO::PARAM_INT);
-        $stmt->bindValue(":sid",$this->id,PDO::PARAM_STR);
+        $newId = random_session_id();
+        $newSalt = random_salt(10);
+        setcookie('shopCookie', $newId, time()+3600);
+        $stmt = $pdo->prepare("UPDATE session SET salt_token = :salt, updated_at = :time, session_id = :newId, user_id = :user_id WHERE session_id= :sid");
+        $stmt->bindValue(':salt',$newSalt,PDO::PARAM_STR);
+        $stmt->bindValue(':time', time(),PDO::PARAM_INT);
+        $stmt->bindValue(':newId',$newId,PDO::PARAM_STR);
+        $stmt->bindValue(':user_id',$user->getId(),PDO::PARAM_INT);
+        $stmt->bindValue(':sid',$this->id,PDO::PARAM_STR);
+
         $stmt->execute();
 
+        echo $newId;
 
-        $this->id = $nId;
+        $this->id = $newId;
         $this->user = $user;
     }
 

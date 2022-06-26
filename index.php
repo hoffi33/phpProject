@@ -31,7 +31,8 @@ require ('header.php');
                     <li><a href="">O nas</a></li>
                     <li><a href="">Kontakt</a></li>
                     <?php
-                    global $session;
+
+                    echo $session->getUser()->getId();
                     if(!$session->getUser()->isAnon())
                     {
                         echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";

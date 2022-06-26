@@ -1,5 +1,5 @@
 <?php
-
+require ('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,15 @@
                 <li><a href="products.php">Rowery</a></li>
                 <li><a href="">O nas</a></li>
                 <li><a href="">Kontakt</a></li>
-                <li><a href="">Zaloguj się</a></li>
+                <?php
+                echo $session->getUser()->getId();
+                if(!$session->getUser()->isAnon())
+                {
+                    echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
+                }else{
+                    echo "<li><a href=\"admin.php\">Zaloguj się</a></li>";
+                }
+                ?>
             </ul>
         </navigation>
 
@@ -42,7 +50,6 @@
 <!----- cart ------->
 <div class="smallContainer cart">
                 <?php
-                require ('header.php');
                 $inCart = $cart->getProducts();
                 $finalPrice = 0;
                 $finalProductPrice = 0;
