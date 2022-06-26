@@ -93,7 +93,9 @@ echo "
             <tr><td>Koszty dostawy</td>
             <td>GRATIS</td></tr>
             <tr><td>Całkowita wartość zamówienia</td>
-                <td> $finalPrice PLN</td></tr>
+                <td> $finalPrice PLN</td>
+                </tr>
+                <tr><td><a href=\"orders.php\" class=\"button\">ZŁÓŻ ZAMÓWIENIE</a></td></tr>
         </table>";
                     }
                 ?>
