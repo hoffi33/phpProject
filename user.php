@@ -14,5 +14,16 @@ class user
         }
         $this->construct = true;
     }
+
+
+    public function setLogin($login){
+        $this->login=$login;
+}
+
+
+public function getId(){
+        return $this->id;
+
+}
 }
 ?>

@@ -53,7 +53,11 @@ if($session = $stmt -> fetch(PDO::FETCH_ASSOC)){            //jesli sesja istnie
 
 
     if($session['user_id'] != 0){       //zalogowany uzytkownik
-
+$stmt = $pdo->prepare("SELECT login FROM user WHERE id= :user_id");
+$stmt->bindValue(":user_id", $session['user_id'],PDO::PARAM_INT);
+$stmt->execute();
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$user->setLogin($row[0]['login']);
     }
     else{                               //niezalogowany uzytkownik
 $this->user = new user(true);
@@ -86,7 +90,22 @@ else{
     }
 
     function updateSession(user $user){             //dla zalogowanego
-        global $pdo,$request;
+        global $pdo,$request,$session;
+
+        $nId = random_session_id();
+        $salt = random_salt(10);
+        setcookie('shopCookie',$nId,time()+3600);
+        $stmt = $pdo->prepare("UPDATE session SET salt_token = :salt, updated_at = :time, session_id: nId, user_id = :user WHERE session_id= :sid");
+        $stmt->bindValue(":salt",$salt,PDO::PARAM_STR);
+        $stmt->bindValue(":time",time(),PDO::PARAM_INT);
+        $stmt->bindValue(":nId",$nId,PDO::PARAM_INT);
+        $stmt->bindValue(":user",$user->getId(),PDO::PARAM_INT);
+        $stmt->bindValue(":sid",$session->getSessionId(),PDO::PARAM_STR);
+        $stmt->execute();
+
+
+        $this->id = $nId;
+        $this->user = $user;
     }
 
     public function getSessionId(){
