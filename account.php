@@ -68,15 +68,15 @@ require ('header.php');
                         <span onclick="login()">Zaloguj się</span>
                         <hr id="idF">
                     </div>
-                    <form action="" method="post" id="registerF">
-                        <input type="text" placeholder="Login" name="login">
-                        <input type="text" placeholder="Email" name="Email">
-                        <input type="text"  placeholder="Hasło" name="pass">
+                    <form action="register.php" method="post" id="registerF">
+                        <input type="text" placeholder="Login" name="loginR">
+                        <input type="text" placeholder="Email" name="emailR">
+                        <input type="password"  placeholder="Hasło" name="passR">
                         <button type="submit" class="button">Zarejestruj</button>
                     </form>
                     <form action="loggingIn.php" method="post" id="loginF">
                         <input type="text" placeholder="Login" name="login">
-                        <input type="text"  placeholder="Hasło" name="pass">
+                        <input type="password"  placeholder="Hasło" name="pass">
                         <button type="submit" class="button">Zaloguj</button>
                     </form>
                 </div>

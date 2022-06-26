@@ -68,14 +68,14 @@ require('header.php');
                         echo "Indeks produktu (bike*): <input type='text' name='indeks'>";
                         echo "Nazwa: <input type='text' name='title'>";
                         echo "Cena: <input type='text' name='price'>";
-                        echo "Opis: <textarea name='name'></textarea>";
+                        echo "Opis: <textarea name='descr'></textarea><br>";
                         echo "Rower typu: <input type='text' name='nazwa'>";
 
 
                         $stmt = $pdo->prepare("SELECT * FROM categories");
                         $stmt->execute();
                         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        echo "<select name='cat'>";
+                        echo "Kategorie: <select name='cat_id'>";
 
                         foreach ($rows as $category) {
 
@@ -85,6 +85,7 @@ require('header.php');
 
                         }
                         echo "</select>";
+                        echo "<input type='submit' value=\"Dodaj produkt\">";
                     }
                 }
 
