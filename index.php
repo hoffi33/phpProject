@@ -26,9 +26,9 @@ require ('header.php');
             </div>
             <navigation>
                 <ul id="mainMenu">
-                    <li><a href="">Strona Główna</a></li>
+                    <li><a href="index.php">Strona Główna</a></li>
                     <li><a href="products.php">Rowery</a></li>
-                    <li><a href="">Odzież ochronna</a></li>
+                    <li><a href="">O nas</a></li>
                     <li><a href="">Kontakt</a></li>
                     <li><a href="">Zaloguj się</a></li>
                 </ul>
@@ -41,7 +41,7 @@ require ('header.php');
             <div class="firstColumn">
                 <h1>Znajdź swój wymarzony rower <br>JUŻ TERAZ!!</h1>
                 <p>Zdrowo, omijając wszystkie korki. </p>
-                <a href="" class="button">SPRAWDŹ NASZĄ OFERTĘ <i class="fa fa-bicycle" aria-hidden="true"></i></a>
+                <a href="products.php" class="button">SPRAWDŹ NASZĄ OFERTĘ <i class="fa fa-bicycle" aria-hidden="true"></i></a>
             </div>
             <div class="secondColumn">
                 <img src="images/race-day.jpg">
@@ -70,7 +70,7 @@ require ('header.php');
                 <a href="product.php?product_id=1">
                  <img src="images/bike1.jpg">
                 <h4>GIANT REIGN E+ 0</h4>
-            </a>
+
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -78,11 +78,14 @@ require ('header.php');
                     <span class="fa fa-star checked"></span>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>36 699 zł</p>
+                <p>36.699zł</p>
+                </a>
             </div>
             <div class="fourthColumn">
-                 <img src="images/prod3.jpg">
-                <h4>KASK GIANT ROOST MIPS, OFF-ROAD</h4>
+                <a href="product.php?product_id=3">
+                    <img src="images/bike3-1.jpg">
+                    <h4>TRANCE X ADVANCED PRO 29 2</h4>
+
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -90,13 +93,14 @@ require ('header.php');
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                 </div>
-                <p>459 zł</p>
+                <p>25.999zł</p>
+                </a>
             </div>
             <div class="fourthColumn">
                 <a href="product.php?product_id=2">
                  <img src="images/bike2.jpg">
                 <h4>GIANT REVOLT E+</h4>
-                </a>
+
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -104,11 +108,13 @@ require ('header.php');
                     <span class="fa fa-star checked"></span>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>24 299 zł</p>
+                <p>24.299zł</p>
+                </a>
             </div>
             <div class="fourthColumn">
-                 <img src="images/prod4.jpg">
-                <h4>PEDAŁY PLATFORMOWE PINNER ELITE</h4>
+                <a href="product.php?product_id=7">
+                 <img src="images/bike7-1.jpg">
+                <h4>PROPEL ADVANCED PRO DISC 0</h4>
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -116,7 +122,8 @@ require ('header.php');
                     <span class="fa fa-star checked"></span>
                     <i class="fa fa-star-half-o checked"></i>
                 </div>
-                <p>249 zł</p>
+                <p>30.499zł</p>
+                </a>
             </div>
         </div>
     </div>

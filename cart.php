@@ -28,12 +28,13 @@
             <ul id="mainMenu">
                 <li><a href="index.php">Strona Główna</a></li>
                 <li><a href="products.php">Rowery</a></li>
-                <li><a href="">Odzież ochronna</a></li>
+                <li><a href="">O nas</a></li>
                 <li><a href="">Kontakt</a></li>
                 <li><a href="">Zaloguj się</a></li>
             </ul>
         </navigation>
-        <img src="images/shopping-cart.png" width="30px" height="30px">
+
+        <a href="cart.php"> <img src="images/shopping-cart.png" width="30px" height="30px"></a>
         <img src="images/menu.png" class="menu" onclick="menuTogg()">
     </div>
 </div>
