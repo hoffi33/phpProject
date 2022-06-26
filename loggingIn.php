@@ -4,9 +4,8 @@ if($session -> getUser() -> isAnon()){
     $res = user::checkPass($_POST['login'], $_POST['pass']);
     if($res instanceof user){           //jesli true to logowanie udane
         $session->updateSession($res);
-        echo "Logowanie powiodlo sie " . $session->getUser()->getLogin();
     }else{
-        header('Location: login.php');
+        header('Location: account.php');
     }
 
 }
@@ -41,12 +40,11 @@ if($session -> getUser() -> isAnon()){
                     <li><a href="">Kontakt</a></li>
                     <?php
                     global $session;
-                    echo $session->getUser()->getId();
                     if(!$session->getUser()->isAnon())
                     {
                         echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
                     }else{
-                        echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
+                        echo "<li><a href=\"admin.php\">Zaloguj się</a></li>";
                     }
                     ?>
                 </ul>

@@ -32,7 +32,7 @@ require ('header.php');
                 <li><a href="">Zaloguj się</a></li>
                 <?php
 
-                echo $session->getUser()->getId();
+
                 if(!$session->getUser()->isAnon())
                 {
                     echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";

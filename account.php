@@ -1,6 +1,5 @@
 <?php
 require ('header.php');
-require ('login.php');
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,7 @@ require ('login.php');
                 <li><a href="">O nas</a></li>
                 <li><a href="">Kontakt</a></li>
                 <?php
-                echo $session->getUser()->getId();
+
                 if(!$session->getUser()->isAnon())
                 {
                     echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
@@ -58,12 +57,12 @@ require ('login.php');
                         <span onclick="register()">Zarejestruj się</span>
                         <hr id="idF">
                     </div>
-                    <form action="loggingIn.php" method="post" id="login">
+                    <form action="loggingIn.php" method="post" id="loginF">
                         <input type="text" placeholder="Login" name="login">
                         <input type="text"  placeholder="Hasło" name="pass">
                         <button type="submit" class="button">Zaloguj</button>
                     </form>
-                    <form action="" method="post" id="register">
+                    <form action="" method="post" id="registerF">
                         <input type="text" placeholder="Login" name="login">
                         <input type="text" placeholder="Email" name="Email">
                         <input type="text"  placeholder="Hasło" name="pass">
@@ -112,17 +111,17 @@ require ('login.php');
 </script>
 <script>
 
-    var register = document.getElementById("register");
-    var login = document.getElementById("login");
-    var idF = documemt.getElementById("idF");
+    var registerF = document.getElementById("registerF");
+    var loginF = document.getElementById("loginF");
+    var idF = document.getElementById("idF");
 
     function register(){
-        register.style.transform = "tramslateX(0px)";
-        login.style.transform = "tramslateX(0px)";
+        registerF.style.transform = "tramslateX(0px)";
+        loginF.style.transform = "tramslateX(0px)";
     }
     function login(){
-        register.style.transform = "tramslateX(300px)";
-        login.style.transform = "tramslateX(300px)";
+        registerF.style.transform = "tramslateX(300px)";
+        loginF.style.transform = "tramslateX(300px)";
     }
 
 </script>
