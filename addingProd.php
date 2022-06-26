@@ -66,13 +66,22 @@ require ('header.php');
                     if($session->getUser()->isAdmin()){
 
                         $indeks = $_POST['indeks'];
-                        $tile = $_POST['title'];
+                        $title = $_POST['title'];
                         $price = $_POST['price'];
                         $descr = $_POST['decr'];
-                        $name = $_POST['name'];
+                        $name = $_POST['nazwa'];
+                        $category_id = $_POST['category'];
 
-                        //zapis
-                        header('admin.php');
+$stmt = $pdo->prepare('INSERT INTO product (id, indeks, title, price, descr, nazwa, category_id) VALUES (null, :indeks, :title, :price, :descr, :nazwa, :category_id)');
+
+$stmt->bindValue(':indeks', $indeks, PDO::PARAM_INT);
+$stmt->bindValue(':title', $title, PDO::PARAM_STR);
+$stmt->bindValue(':price', $price, PDO::PARAM_INT);
+$stmt->bindValue(':descr', $descr, PDO::PARAM_STR);
+$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+$stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+
+                        header('Location: admin.php');
                     }
                 }
 

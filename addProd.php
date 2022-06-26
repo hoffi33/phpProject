@@ -74,13 +74,14 @@ require('header.php');
 
                         $stmt = $pdo->prepare("SELECT * FROM categories");
                         $stmt->execute();
+                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         echo "<select name='cat'>";
 
-                        foreach ($row = $stmt->fetchAll(PDO::FETCH_ASSOC) as $category) {
+                        foreach ($rows as $category) {
 
                             $id = $category['id'];
                             $name = $category['name'];
-                            echo "<option value='$id'>$name</option>";
+                            echo "Kategoria: <option value='$id'>$name</option>";
 
                         }
                         echo "</select>";
