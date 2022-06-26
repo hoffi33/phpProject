@@ -67,7 +67,7 @@ require('header.php');
                         echo "Usuwanie produktu:";
                         echo "Indeks produktu (product_id=*): <input type='text' name='del_id'>";
                         echo "</select>";
-                        echo "<input type='submit' value=\"Dodaj produkt\">";
+                        echo "<input type='submit' value=\"Usuń produkt\">";
                     }
                 }
 
