@@ -101,7 +101,6 @@ p {
 .header, row {
     margin-top: 70px;
 }
-
 .button:hover {
     background: #211515;
 }
@@ -250,7 +249,7 @@ select:focus{
     padding: 20px;
 }
 .singleProd h4{
-     margin: 20px 0;
+    margin: 20px 0;
     font-size: 22px;
     font-weight: bold;
 }
@@ -271,13 +270,13 @@ select:focus{
     cursor: pointer ;
 }
 <!-------- cart items --------->
-.cart{
-    margin: 80px auto;
+    .cart{
+        margin: 80px auto;
     }
 table{
-        width: 100%;
+    width: 100%;
     border-collapse: collapse;
-    }
+}
 .cartInfo{
     display: flex;
     flex-wrap: wrap;
@@ -323,19 +322,65 @@ th:last-child{
 
 .acc{
     padding: 50px 0;
-    background: radial-gradient(#ffffff,#89cff0);
+    background: radial-gradient(#fff,#89cff0);
 }
 .form{
     background: #fcfcfc;
     width: 300px;
     height: 400px;
     position: relative;
-text-align: center;
+    text-align: center;
     padding: 20px 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
 }
-
+.form span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+.formB{
+    display: inline-block;
+}
+.form form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #cccccc;
+}
+form .button{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .button:focus{
+    outline: none;
+}
+#register{
+    left: -300px;
+}
+#login{
+    left: 0;
+}
+#idF{
+    width: 100px;
+    border: none;
+    background: #0d2992;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+}
 
 
 

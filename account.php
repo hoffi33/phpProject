@@ -48,15 +48,30 @@ require ('login.php');
 <div class="acc">
     <div class="container">
         <div class="row">
-        <div class="secondColumn">
-<img src="images/image1.jpg" width="100%">
-        </div>
+            <div class="secondColumn">
+                <img src="images/image1.jpg" width="100%">
+            </div>
             <div class="secondColumn">
                 <div class="form">
-
+                    <div class="formB">
+                        <span>Zaloguj się</span>
+                        <span>Zarejestruj się</span>
+                        <hr id="idF">
+                    </div>
+                    <form action="loggingIn.php" method="post" id="login">
+                        <input type="text" placeholder="Login" name="login">
+                        <input type="text"  placeholder="Hasło" name="pass">
+                        <button type="submit" class="button">Zaloguj</button>
+                    </form>
+                    <form action="" method="post" id="register">
+                        <input type="text" placeholder="Login" name="login">
+                        <input type="text" placeholder="Email" name="Email">
+                        <input type="text"  placeholder="Hasło" name="pass">
+                        <button type="submit" class="button">Zarejestruj</button>
+                    </form>
                 </div>
             </div>
-"</div>
+            "</div>
     </div>
 
 
