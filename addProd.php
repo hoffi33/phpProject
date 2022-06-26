@@ -1,6 +1,5 @@
-
 <?php
-require ('header.php');
+require('header.php');
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +11,8 @@ require ('header.php');
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto+Slab:wght@200&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -33,8 +33,7 @@ require ('header.php');
                     <li><a href="">Kontakt</a></li>
                     <?php
 
-                    if(!$session->getUser()->isAnon())
-                    {
+                    if (!$session->getUser()->isAnon()) {
 
                         if ($session->getUser()->isAdmin()) {
                             echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
@@ -42,7 +41,7 @@ require ('header.php');
                         } else {
                             echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
                         }
-                    }else {
+                    } else {
                         if ($session->getUser()->isAdmin()) {
                             echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
                             echo "<li><a href=\"admin.php\">Admin</a></li>";
@@ -59,55 +58,69 @@ require ('header.php');
         </div>
         <div class="row">
             <div class="firstColumn">
-            <?php
-            if($session -> getUser() -> isAnon()){
-                require ('account.php');
-            }else{
-                if($session->getUser()->isAdmin()){
-                    echo "<form action='addingProd.php' method='post'>";
-                    echo "Dodawanie produktu:";
-                    echo "Indeks produktu (bike*): <input type='text' name='indeks'>";
-                    echo "Nazwa: <input type='text' name='title'>";
-                    echo "Cena: <input type='text' name='price'>";
-                    echo "Opis: <input type='text' name='descr'>";
-                    echo "Kategoria: <textarea name='name'></textarea>";
+                <?php
+                if ($session->getUser()->isAnon()) {
+                    require('account.php');
+                } else {
+                    if ($session->getUser()->isAdmin()) {
+                        echo "<form action='addingProd.php' method='post'>";
+                        echo "Dodawanie produktu:";
+                        echo "Indeks produktu (bike*): <input type='text' name='indeks'>";
+                        echo "Nazwa: <input type='text' name='title'>";
+                        echo "Cena: <input type='text' name='price'>";
+                        echo "Opis: <textarea name='name'></textarea>";
+                        echo "Rower typu: <input type='text' name='nazwa'>";
+
+
+                        $stmt = $pdo->prepare("SELECT * FROM categories");
+                        $stmt->execute();
+                        echo "<select name='cat'>";
+
+                        foreach ($row = $stmt->fetchAll(PDO::FETCH_ASSOC) as $category) {
+
+                            $id = $category['id'];
+                            $name = $category['name'];
+                            echo "<option value='$id'>$name</option>";
+
+                        }
+                        echo "</select>";
+                    }
                 }
-            }
 
 
-
-            ?>
+                ?>
             </div>
         </div>
         <br><br><br>
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="footColumn">
-                            <h3>Przydatne linki</h3>
-                            <ul>
-                                <li>Polityka Prywatności</li>
-                                <li>Zwroty</li>
-                                <li>Płatności</li>
-                                <li>Dostawy</li>
-                            </ul>
-                        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footColumn">
+                        <h3>Przydatne linki</h3>
+                        <ul>
+                            <li>Polityka Prywatności</li>
+                            <li>Zwroty</li>
+                            <li>Płatności</li>
+                            <li>Dostawy</li>
+                        </ul>
                     </div>
-                    <hr>
-                    <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
                 </div>
+                <hr>
+                <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
             </div>
-            <script>
-                var mainMenu = document.getElementById("mainMenu");
-                mainMenu.style.maxHeight = "0px";
-                function menuTogg(){
-                    if(mainMenu.style.maxHeight == "0px"){
-                        mainMenu.style.maxHeight = "200px";
-                    }else{
-                        mainMenu.style.maxHeight = "0px";
-                    }
+        </div>
+        <script>
+            var mainMenu = document.getElementById("mainMenu");
+            mainMenu.style.maxHeight = "0px";
+
+            function menuTogg() {
+                if (mainMenu.style.maxHeight == "0px") {
+                    mainMenu.style.maxHeight = "200px";
+                } else {
+                    mainMenu.style.maxHeight = "0px";
                 }
-            </script>
+            }
+        </script>
 </body>
 </html>
 

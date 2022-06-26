@@ -71,6 +71,8 @@ require ('header.php');
                         $descr = $_POST['decr'];
                         $name = $_POST['name'];
 
+                        //zapis
+                        header('admin.php');
                     }
                 }
 
