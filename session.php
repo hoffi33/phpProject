@@ -103,11 +103,7 @@ else{
         $stmt->bindValue(':newId',$newId,PDO::PARAM_STR);
         $stmt->bindValue(':user_id',$user->getId(),PDO::PARAM_INT);
         $stmt->bindValue(':sid',$this->id,PDO::PARAM_STR);
-
         $stmt->execute();
-
-        echo $newId;
-
         $this->id = $newId;
         $this->user = $user;
     }
