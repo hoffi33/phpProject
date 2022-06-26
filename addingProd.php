@@ -59,49 +59,55 @@ require ('header.php');
         </div>
         <div class="row">
             <div class="firstColumn">
-            <?php
-            if($session -> getUser() -> isAnon()){
-                require ('account.php');
-            }else{
-                if($session->getUser()->isAdmin()){
-                    echo "<a href=\"addProd.php\">Dodawanie produkutu</a>";
+                <?php
+                if($session -> getUser() -> isAnon()){
+                    require ('account.php');
+                }else{
+                    if($session->getUser()->isAdmin()){
+
+                        $indeks = $_POST['indeks'];
+                        $tile = $_POST['title'];
+                        $price = $_POST['price'];
+                        $descr = $_POST['decr'];
+                        $name = $_POST['name'];
+
+                    }
                 }
-            }
 
 
 
-            ?>
+                ?>
             </div>
         </div>
         <br><br><br>
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="footColumn">
-                <h3>Przydatne linki</h3>
-                <ul>
-                    <li>Polityka Prywatności</li>
-                    <li>Zwroty</li>
-                    <li>Płatności</li>
-                    <li>Dostawy</li>
-                </ul>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footColumn">
+                        <h3>Przydatne linki</h3>
+                        <ul>
+                            <li>Polityka Prywatności</li>
+                            <li>Zwroty</li>
+                            <li>Płatności</li>
+                            <li>Dostawy</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
             </div>
         </div>
-        <hr>
-        <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
-    </div>
-</div>
-<script>
-    var mainMenu = document.getElementById("mainMenu");
-    mainMenu.style.maxHeight = "0px";
-    function menuTogg(){
-        if(mainMenu.style.maxHeight == "0px"){
-            mainMenu.style.maxHeight = "200px";
-        }else{
+        <script>
+            var mainMenu = document.getElementById("mainMenu");
             mainMenu.style.maxHeight = "0px";
-        }
-    }
-</script>
+            function menuTogg(){
+                if(mainMenu.style.maxHeight == "0px"){
+                    mainMenu.style.maxHeight = "200px";
+                }else{
+                    mainMenu.style.maxHeight = "0px";
+                }
+            }
+        </script>
 </body>
 </html>
 

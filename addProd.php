@@ -64,7 +64,13 @@ require ('header.php');
                 require ('account.php');
             }else{
                 if($session->getUser()->isAdmin()){
-                    echo "<a href=\"addProd.php\">Dodawanie produkutu</a>";
+                    echo "<form action='addingProd.php' method='post'>";
+                    echo "Dodawanie produktu:";
+                    echo "Indeks produktu (bike*): <input type='text' name='indeks'>";
+                    echo "Nazwa: <input type='text' name='title'>";
+                    echo "Cena: <input type='text' name='price'>";
+                    echo "Opis: <input type='text' name='descr'>";
+                    echo "Kategoria: <textarea name='name'></textarea>";
                 }
             }
 
@@ -74,34 +80,34 @@ require ('header.php');
             </div>
         </div>
         <br><br><br>
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="footColumn">
-                <h3>Przydatne linki</h3>
-                <ul>
-                    <li>Polityka Prywatności</li>
-                    <li>Zwroty</li>
-                    <li>Płatności</li>
-                    <li>Dostawy</li>
-                </ul>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footColumn">
+                            <h3>Przydatne linki</h3>
+                            <ul>
+                                <li>Polityka Prywatności</li>
+                                <li>Zwroty</li>
+                                <li>Płatności</li>
+                                <li>Dostawy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
+                </div>
             </div>
-        </div>
-        <hr>
-        <p class="copyrights">Najlepszy Sklep | WPRG s24551</p>
-    </div>
-</div>
-<script>
-    var mainMenu = document.getElementById("mainMenu");
-    mainMenu.style.maxHeight = "0px";
-    function menuTogg(){
-        if(mainMenu.style.maxHeight == "0px"){
-            mainMenu.style.maxHeight = "200px";
-        }else{
-            mainMenu.style.maxHeight = "0px";
-        }
-    }
-</script>
+            <script>
+                var mainMenu = document.getElementById("mainMenu");
+                mainMenu.style.maxHeight = "0px";
+                function menuTogg(){
+                    if(mainMenu.style.maxHeight == "0px"){
+                        mainMenu.style.maxHeight = "200px";
+                    }else{
+                        mainMenu.style.maxHeight = "0px";
+                    }
+                }
+            </script>
 </body>
 </html>
 
