@@ -57,6 +57,7 @@ $stmt = $pdo->prepare("SELECT login FROM user WHERE id= :user_id");
 $stmt->bindValue(":user_id", $session['user_id'],PDO::PARAM_INT);
 $stmt->execute();
 $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$this->user = new user;
 $user->setLogin($row[0]['login']);
     }
     else{                               //niezalogowany uzytkownik
@@ -95,12 +96,12 @@ else{
         $nId = random_session_id();
         $salt = random_salt(10);
         setcookie('shopCookie',$nId,time()+3600);
-        $stmt = $pdo->prepare("UPDATE session SET salt_token = :salt, updated_at = :time, session_id: nId, user_id = :user WHERE session_id= :sid");
+        $stmt = $pdo->prepare("UPDATE session SET salt_token = :salt, updated_at = :time, session_id= :nId, user_id = :user WHERE session_id= :sid");
         $stmt->bindValue(":salt",$salt,PDO::PARAM_STR);
         $stmt->bindValue(":time",time(),PDO::PARAM_INT);
         $stmt->bindValue(":nId",$nId,PDO::PARAM_INT);
         $stmt->bindValue(":user",$user->getId(),PDO::PARAM_INT);
-        $stmt->bindValue(":sid",$session->getSessionId(),PDO::PARAM_STR);
+        $stmt->bindValue(":sid",$this->id,PDO::PARAM_STR);
         $stmt->execute();
 
 
@@ -112,5 +113,9 @@ else{
         return $this->id;
     }
 
+
+    public function getUser(){
+        return $this->user;
+    }
 
 }
