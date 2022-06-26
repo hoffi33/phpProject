@@ -33,6 +33,7 @@ require ('header.php');
                 {
                     echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
                 }else{
+                    if($session->getUser()->isAdmin())
                     echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
                 }
                 ?>

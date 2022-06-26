@@ -25,6 +25,10 @@ class user
         return $this->login;
 
     }
+    public function isAdmin(){
+
+        return ($this->id == 1);
+    }
 
     public function getId()
     {
