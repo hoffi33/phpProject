@@ -51,22 +51,22 @@ require ('header.php');
                 <img src="images/image1.jpg" width="100%">
             </div>
             <div class="secondColumn">
-                <div class="form">
+                <div class="form-con">
                     <div class="formB">
-                        <span onclick="login()">Zaloguj się</span>
                         <span onclick="register()">Zarejestruj się</span>
+                        <span onclick="login()">Zaloguj się</span>
                         <hr id="idF">
                     </div>
-                    <form action="loggingIn.php" method="post" id="loginF">
-                        <input type="text" placeholder="Login" name="login">
-                        <input type="text"  placeholder="Hasło" name="pass">
-                        <button type="submit" class="button">Zaloguj</button>
-                    </form>
                     <form action="" method="post" id="registerF">
                         <input type="text" placeholder="Login" name="login">
                         <input type="text" placeholder="Email" name="Email">
                         <input type="text"  placeholder="Hasło" name="pass">
                         <button type="submit" class="button">Zarejestruj</button>
+                    </form>
+                    <form action="loggingIn.php" method="post" id="loginF">
+                        <input type="text" placeholder="Login" name="login">
+                        <input type="text"  placeholder="Hasło" name="pass">
+                        <button type="submit" class="button">Zaloguj</button>
                     </form>
                 </div>
             </div>
@@ -115,13 +115,15 @@ require ('header.php');
     var loginF = document.getElementById("loginF");
     var idF = document.getElementById("idF");
 
-    function register(){
-        registerF.style.transform = "tramslateX(0px)";
-        loginF.style.transform = "tramslateX(0px)";
-    }
     function login(){
-        registerF.style.transform = "tramslateX(300px)";
-        loginF.style.transform = "tramslateX(300px)";
+        registerF.style.transform = "translateX(0px)";
+        loginF.style.transform = "translateX(0px)";
+        idF.style.transform = "translateX(100px)"
+    }
+    function register(){
+        registerF.style.transform = "translateX(300px)";
+        loginF.style.transform = "translateX(300px)";
+        idF.style.transform = "translateX(0px)";
     }
 
 </script>
