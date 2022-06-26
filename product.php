@@ -40,12 +40,22 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <li><a href="">Kontakt</a></li>
                 <?php
 
-
                 if(!$session->getUser()->isAnon())
                 {
-                    echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
-                }else{
-                    echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
+
+                    if ($session->getUser()->isAdmin()) {
+                        echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
+                        echo "<li><a href=\"admin.php\">Admin</a></li>";
+                    } else {
+                        echo "<li><a href=\"logout.php\">Wyloguj się</a></li>";
+                    }
+                }else {
+                    if ($session->getUser()->isAdmin()) {
+                        echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
+                        echo "<li><a href=\"admin.php\">Admin</a></li>";
+                    } else {
+                        echo "<li><a href=\"account.php\">Zaloguj się</a></li>";
+                    }
                 }
                 ?>
             </ul>
