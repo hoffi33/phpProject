@@ -50,6 +50,7 @@ require ('header.php');
     <form action="orderSum.php" method="post">
         Imie <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}" name="name" required><br>
        Nazwisko <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}"name="surname" required><br>
+       Email <input type="email" name="email" required><br>
         Ulica <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}" name="street" required><br>
         Nr. mieszkania <input type="number" name="street_num" min="1" required><br>
         Miasto <input type="text" pattern="[A-Za-ząęźżśóćńł]{1,32}" name="city" required><br>
