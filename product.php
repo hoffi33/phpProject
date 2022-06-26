@@ -135,36 +135,70 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             </div>
 
                 <!----- polecane produty ----->
-                <div class="smallContainer">
-                    <div class="row row-2">
-                        <h2>Nasze inne rowery:</h2>
-                        <a href="products.php"><p>Zobacz wiecej</p></a>
-                    </div>
+        <div class="smallContainer">
+            <h2 class="title">Polecane Produkty</h2>
+            <div class="row">
+                <div class="fourthColumn">
+                    <a href="product.php?product_id=1">
+                        <img src="images/bike1.jpg">
+                        <h4>GIANT REIGN E+ 0</h4>
+
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <p>36.699zł</p>
+                    </a>
                 </div>
-                <div class="smallContainer">
-                    <div class="row">
-                        <div class="fourthColumn">
-                            <img src="images/bike1.jpg">
-                            <h4>GIANT REIGN E+ 0</h4>
-                            <p>36 699 zł</p>
+                <div class="fourthColumn">
+                    <a href="product.php?product_id=3">
+                        <img src="images/bike3-1.jpg">
+                        <h4>TRANCE X ADVANCED PRO 29 2</h4>
+
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
                         </div>
-                        <div class="fourthColumn">
-                            <img src="images/prod3.jpg">
-                            <h4>KASK GIANT ROOST MIPS, OFF-ROAD</h4>
-                            <p>459 zł</p>
-                        </div>
-                        <div class="fourthColumn">
-                            <img src="images/bike3.jpg">
-                            <h4>GIANT REVOLT E+</h4>
-                            <p>24 299 zł</p>
-                        </div>
-                        <div class="fourthColumn">
-                            <img src="images/prod4.jpg">
-                            <h4>PEDAŁY PLATFORMOWE PINNER ELITE</h4>
-                            <p>249 zł</p>
-                        </div>
-                    </div>
+                        <p>25.999zł</p>
+                    </a>
                 </div>
+                <div class="fourthColumn">
+                    <a href="product.php?product_id=2">
+                        <img src="images/bike2.jpg">
+                        <h4>GIANT REVOLT E+</h4>
+
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <p>24.299zł</p>
+                    </a>
+                </div>
+                <div class="fourthColumn">
+                    <a href="product.php?product_id=7">
+                        <img src="images/bike7-1.jpg">
+                        <h4>PROPEL ADVANCED PRO DISC 0</h4>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <i class="fa fa-star-half-o checked"></i>
+                        </div>
+                        <p>30.499zł</p>
+                    </a>
+                </div>
+            </div>
+        </div>
 
 
                 <div class="footer">

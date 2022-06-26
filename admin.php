@@ -64,7 +64,7 @@ require ('header.php');
                 require ('account.php');
             }else{
                 if($session->getUser()->isAdmin()){
-                    echo "<a href=\"addProd.php\">Dodawanie produktu</a>";
+                    echo "<a href=\"addProd.php\">Dodawanie produktu</a><br>";
                     echo "<a href=\"deleteProd.php\">Usuwanie produktu</a>";
 
                 }
