@@ -65,9 +65,10 @@ require ('header.php');
                         $stmt -> bindValue(':pass', $_POST['passR'], PDO::PARAM_STR );
                         $stmt -> bindValue(':email', $_POST['emailR'], PDO::PARAM_STR );
                         $stmt->execute();
+                        alert("Na podany adres email wyslalismy potwierdzenie rejestracji");
                     mail($_POST['emailR'], "Rejestracja konta WPRGBikeShop", "Wysyłamy potwierdzenie rejestracji Twojego konta!" . "\n" .
                         "Login: " . $_POST['loginR'] . "\n" . "Haslo: " . $_POST['passR'] . "\n" . "Email: " . $_POST['emailR'] .  "\n" . "Jeśli dostrzegasz błąd w ww. danych - niezwłocznie odezwij się do nas!");
-                        header('Location: index.php');
+
                     }
 
 

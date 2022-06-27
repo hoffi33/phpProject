@@ -14,4 +14,9 @@ $pdo -> exec("SET NAMES 'utf8'");
 $request = new userRequest();
 $session = new session;
 $cart = new cartFun;
+
+
+function alert($mess) {
+    echo "<script>alert('$mess');</script>";
+}
 ?>

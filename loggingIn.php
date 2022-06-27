@@ -2,9 +2,11 @@
 require ('header.php');
 if($session -> getUser() -> isAnon()){
     $res = user::checkPass($_POST['login'], $_POST['pass']);
-    if($res instanceof user){           //jesli true to logowanie udane
+    if($res instanceof user){//jesli true to logowanie udane
+        alert("Logowanie powiodło się");
         $session->updateSession($res);
     }else{
+        alert("Podano niepoprawne dane!");
         header('Location: account.php');
     }
 
