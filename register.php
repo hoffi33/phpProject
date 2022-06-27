@@ -59,21 +59,34 @@ require ('header.php');
             <div class="firstColumn">
                 <?php
                 global $pdo;
-                if($session -> getUser() -> isAnon()){
-                        $stmt = $pdo->prepare('INSERT INTO user (id,login,pass,email) VALUES (null, :login, :pass, :email)');
-                        $stmt -> bindValue(':login', $_POST['loginR'], PDO::PARAM_STR );
-                        $stmt -> bindValue(':pass', $_POST['passR'], PDO::PARAM_STR );
-                        $stmt -> bindValue(':email', $_POST['emailR'], PDO::PARAM_STR );
-                        $stmt->execute();
-                        alert("Na podany adres email wyslalismy potwierdzenie rejestracji");
-                    mail($_POST['emailR'], "Rejestracja konta WPRGBikeShop", "Wysyłamy potwierdzenie rejestracji Twojego konta!" . "\n" .
-                        "Login: " . $_POST['loginR'] . "\n" . "Haslo: " . $_POST['passR'] . "\n" . "Email: " . $_POST['emailR'] .  "\n" . "Jeśli dostrzegasz błąd w ww. danych - niezwłocznie odezwij się do nas!");
+                $stmt = $pdo->prepare("SELECT * from user where login = :login ");
+                $stmt->bindValue(":login",$_POST['loginR'],PDO::PARAM_STR);
+                $stmt->execute();
+                $user = $stmt->fetch();
+                if ($user) {
+                    echo "Ten login lub email jest juz zajęty!";
+                } else {
+                    $stmt = $pdo->prepare("SELECT * from user where email = :email ");
+                    $stmt->bindValue(':email', $_POST['emailR'], PDO::PARAM_STR);
+                    $stmt->execute();
+                    $email = $stmt->fetch();
 
+                    if ($email) {
+                        echo "Ten email jest juz zajęty!";
+                    } else {
+                        if ($session->getUser()->isAnon()) {
+                            $stmt = $pdo->prepare('INSERT INTO user (id,login,pass,email) VALUES (null, :login, :pass, :email)');
+                            $stmt->bindValue(':login', $_POST['loginR'], PDO::PARAM_STR);
+                            $stmt->bindValue(':pass', $_POST['passR'], PDO::PARAM_STR);
+                            $stmt->bindValue(':email', $_POST['emailR'], PDO::PARAM_STR);
+                            $stmt->execute();
+                            alert("Na podany adres email wyslalismy potwierdzenie rejestracji");
+                            mail($_POST['emailR'], "Rejestracja konta WPRGBikeShop", "Wysyłamy potwierdzenie rejestracji Twojego konta!" . "\n" .
+                                "Login: " . $_POST['loginR'] . "\n" . "Haslo: " . $_POST['passR'] . "\n" . "Email: " . $_POST['emailR'] . "\n" . "Jeśli dostrzegasz błąd w ww. danych - niezwłocznie odezwij się do nas!");
+
+                        }
                     }
-
-
-
-
+                }
                 ?>
             </div>
         </div>
@@ -108,5 +121,3 @@ require ('header.php');
         </script>
 </body>
 </html>
-
-
