@@ -64,7 +64,7 @@ require ('header.php');
                 $stmt->execute();
                 $user = $stmt->fetch();
                 if ($user) {
-                    echo "Ten login lub email jest juz zajęty!";
+                    echo "Ten login jest juz zajęty!";
                 } else {
                     $stmt = $pdo->prepare("SELECT * from user where email = :email ");
                     $stmt->bindValue(':email', $_POST['emailR'], PDO::PARAM_STR);
